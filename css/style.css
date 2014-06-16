@@ -51,7 +51,7 @@ body {
 	font-size: 1.2em;
 }
 .partida {
-	background-color: pink;
+	background-color: gray;
 	margin-bottom: 20px;
 	width: 100%;
 	position: relative;
@@ -72,4 +72,25 @@ body {
 	text-transform: uppercase;
 	color: #ffffff;
 	font-size: 2em;
+}
+.link-jogo {
+	text-decoration: none;
+	background-color: purple;
+	font-size: 2em;
+	padding: 5px;
+	display: none;
+}
+.ao-vivo {
+	display: block;
+}
+.local-jogo {
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	display: inline-block;
+	padding: 2px;
+	background-color: yellow;
+}
+.sem-foto {
+	display: none;
 }

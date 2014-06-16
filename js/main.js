@@ -17,7 +17,7 @@ $(document).on('ready', function(){
 				tabelaJogos       = tabela.jogos,
 				tabelaJogosLenght = tabela.jogos.length;
 
-			for(iJogos; iJogos < tabelaJogosLenght; iJogos++) {
+			for(;iJogos < tabelaJogosLenght; iJogos++) {
 				var jogo 			= tabelaJogos[iJogos];
 				var	timecasa 	    = jogo.time_casa.nome,
 					placarcasa 	    = jogo.time_casa.placar,
@@ -27,14 +27,13 @@ $(document).on('ready', function(){
 					fotoVisitante   = jogo.time_visitante.escudo,
 					horaJogo 	    = jogo.hora,
 					dataJogo	    = jogo.data,
-					status	  	    = jogo.status;
+					status	  	    = jogo.status,
+					url				= jogo.url,
+					local			= jogo.localizacao;
 
-				// console.log("A tabela é: " + tabelaJogos[0].time_casa.nome + " VS " + tabelaJogos[0].time_visitante.nome);
-				// console.log("O tamanho é: " + tabelaJogosLenght);
-				console.log('O jogo é: ' + timecasa + ' VS ' + timevisitante);
-				// console.log('Os dados foram: ' + timecasa, timevisitante, horaJogo, dataJogo, status);
+				// console.log('O jogo é: ' + timecasa + ' VS ' + timevisitante);
 
-				var body = document.querySelector('body');
+				body = document.querySelector('body');
 
 				// criando elementos
 				aside = document.createElement('aside');
@@ -65,6 +64,12 @@ $(document).on('ready', function(){
 				pStatus = document.createElement('p');
 				pStatus.classList.add('status-jogo');
 
+				linkJogo = document.createElement('a');
+				linkJogo.classList.add('link-jogo');
+
+				localJogo = document.createElement('img');
+				localJogo.classList.add('local-jogo');
+
 				// append dos elementos
 					aside.appendChild(h1);
 					aside.appendChild(figureCasa);
@@ -76,59 +81,67 @@ $(document).on('ready', function(){
 
 					aside.appendChild(pHora);
 					aside.appendChild(pData);
+					aside.appendChild(linkJogo);
+					aside.appendChild(localJogo);
 					aside.appendChild(pStatus);
 
 					body.appendChild(aside);
 
 				// definindo jogos
-				var casa = document.querySelector('.time-casa');
-					casa.innerHTML = timecasa;
-
-				var visitante = document.querySelector('.time-visitante');
-					visitante.innerHTML = timevisitante;
+				h1.innerHTML = timecasa;
+				h2.innerHTML = timevisitante;
 
 				// definindo escudos
-				var imgCasa = document.querySelector('.img-casa');
-					imgCasa.innerHTML = "<img src='" + fotoCasa + "' />";
-
-				var imgVisitante = document.querySelector('.img-visitante');
-					imgVisitante.innerHTML = "<img src='" + fotoVisitante + "' />";
+				figureCasa.innerHTML = "<img src='" + fotoCasa + "' />";
+				figureVisitante.innerHTML = "<img src='" + fotoVisitante + "' />";
 
 				// definindo hora
-				var hora = document.querySelector('.hora-jogo');
-					hora.innerHTML = horaJogo;
+				pHora.innerHTML = horaJogo;
 
 				// definindo data
-				var data = document.querySelector('.data-jogo');
-					data.innerHTML = dataJogo;
+				pData.innerHTML = dataJogo;
 
 				// definindo status do jogo
-				var statusJogo = document.querySelector('.status-jogo');
-					statusJogo.innerHTML = status;
+				pStatus.innerHTML = status;
 
 				// definindo placar
-				var placar1 = document.querySelector('.placar-casa');
-					placar1.innerHTML = placarcasa;
+				placarCasa.innerHTML = placarcasa;
+				placarVisitante.innerHTML = placarvisitante;
 
-				var placar2 = document.querySelector('.placar-visitante');
-					placar2.innerHTML = placarvisitante;
+				// definindo local de jogo
+				localJogo.innerHTML = local;
 
+				// inserindo imagem das arenas
+				if(local == 'Arena das Dunas') {
+					localJogo.setAttribute('src', 'http://blogdobg.com.br/wp-content/uploads/2014/01/IMG_0599.jpg');
+				} else if (local == 'Arena da Baixada') {
+					localJogo.setAttribute('src', 'http://imagens.globoradio.globo.com/globoradio/fotosGen/4282/428119.jpg');
+				} else {
+					localJogo.classList.add('sem-foto');
+				}
+
+				// definindo url
+				if(status == 'Em Andamento') {
+					linkJogo.textContent = 'Acompanhe os lances';
+					linkJogo.classList.add('ao-vivo');
+					linkJogo.setAttribute('href', url);
+					linkJogo.setAttribute('target', '_blank');
+				}
 
 				// verificando placar perdedor
 				if(placarcasa < placarvisitante) {
-					placar1.classList.add('perdedor');
+					placarCasa.classList.add('perdedor');
 				}
 				if(placarvisitante < placarcasa) {
-					placar2.classList.add('perdedor');
+					placarVisitante.classList.add('perdedor');
 				}
 
 				// verificando partidas encerradas
 				if (status == 'Encerrada') {
-					statusJogo.classList.add('jogo-encerrado');
-					var partida = document.querySelector('.partida');
-					partida.classList.add('finalizada');
+					pStatus.classList.add('jogo-encerrado');
+					aside.classList.add('finalizada');
 				}
-			} // end for
+			};// end for
 		},
 
 		error: function() {
