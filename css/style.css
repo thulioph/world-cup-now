@@ -147,7 +147,7 @@ body {
 /*info-jogo*/
 .info-jogo {
 	width: 100%;
-	max-height: 120px;
+	height: 120px;
 	display: inline-block;
 	vertical-align: middle;
 	position: relative;
