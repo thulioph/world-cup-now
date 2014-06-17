@@ -113,8 +113,8 @@ body {
 	background: url('http://s2.glbimg.com/zHeJ_S_M7k3WfLc8CzSb12IT7g2YQE-RsCfeSlZvuD_QwNTFLD41L4kzf8G8RnJM/s.glbimg.com/es/ge/f/original/2013/02/01/estadiocastelao_-ernestorodrigues_ae_1.jpg') no-repeat;
 	background-size: cover;
 }
-
-.finalizada {
+.finalizada,
+.criada {
 	background-color: #A1A1A1;
 }
 .selecao {

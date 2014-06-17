@@ -151,14 +151,6 @@ $(document).on('ready', function(){
 					aside.classList.add('arena-castelao');
 				}
 
-				// definindo url
-				if(status == 'Em Andamento') {
-					linkJogo.textContent = 'Acompanhe os lances';
-					linkJogo.classList.add('ao-vivo');
-					linkJogo.setAttribute('href', url);
-					linkJogo.setAttribute('target', '_blank');
-				}
-
 				// verificando placar perdedor
 				if (placarcasa < placarvisitante) {
 					placarCasa.classList.add('perdedor');
@@ -170,6 +162,13 @@ $(document).on('ready', function(){
 				// verificando partidas encerradas
 				if (status == 'Encerrada') {
 					aside.classList.add('finalizada');
+				} else if (status == 'Criada') {
+					pStatus.textContent = 'Aguardando o começo';
+				} else if(status == 'Em Andamento') {
+					linkJogo.textContent = 'Acompanhe os lances';
+					linkJogo.classList.add('ao-vivo');
+					linkJogo.setAttribute('href', url);
+					linkJogo.setAttribute('target', '_blank');
 				}
 			};// end for
 		},
