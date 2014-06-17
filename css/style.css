@@ -60,11 +60,11 @@ body {
 	height: auto;
 	margin-bottom: 20px;
 	position: relative;
-	background-color: #B4CAE3;
+	/*background-color: #B4CAE3;*/
 	text-align: center;
 	padding-bottom: 10px;
 }
-/*arenas*/
+/*arenas
 .arena-das-dunas {
 	background: url('http://blogdobg.com.br/wp-content/uploads/2014/01/IMG_0599.jpg') no-repeat;
 	background-size: cover;
@@ -112,10 +112,10 @@ body {
 .arena-castelao {
 	background: url('http://s2.glbimg.com/zHeJ_S_M7k3WfLc8CzSb12IT7g2YQE-RsCfeSlZvuD_QwNTFLD41L4kzf8G8RnJM/s.glbimg.com/es/ge/f/original/2013/02/01/estadiocastelao_-ernestorodrigues_ae_1.jpg') no-repeat;
 	background-size: cover;
-}
+}*/
 
 .finalizada {
-	background-color: #A1A1A1;
+	color: red;
 }
 .selecao {
 	width: 45%;
@@ -139,10 +139,10 @@ body {
 	height: 40px;
 }
 .placar {
-	font-size: 1.4em;
+	font-size: 5em;
 	padding: 5px 5px 0 5px;
-	background-color: black;
-	color: #ffffff;
+	/*background-color: black;*/
+	/*color: #ffffff;*/
 }
 /*info-jogo*/
 .info-jogo {
@@ -152,7 +152,8 @@ body {
 	vertical-align: middle;
 	position: relative;
 	margin: 0 auto;
-	background: rgba(255,255,255, .8);
+	/*background: rgba(255,255,255, .8);*/
+	border-bottom: 1px solid rgb(213, 213, 213);
 }
 .data-jogo,
 .hora-jogo,
@@ -197,7 +198,7 @@ body {
 }
 .link-jogo {
 	text-decoration: none;
-	background-color: black;
+	/*background-color: black;*/
 	font-size: 1.8em;
 	padding: 5px;
 	color: #ffffff;
@@ -207,8 +208,7 @@ body {
 	margin-left: -100px;
 	display: none;
 }
-.perdedor {
-	background-color: red;
+.perdedor {	
 	position: relative;
 }
 .perdedor::after {
@@ -226,4 +226,21 @@ body {
 }
 .sem-foto {
 	display: none;
+}
+
+/*Adicionado por Kury*/
+
+.topo{
+	text-align: center;
+	font-size:  3em;
+	margin-top: 10px;
+}
+.arena-jogo{
+	width: 10%;
+}
+.vencedor{
+	color: green;
+}
+.trophy:before{
+	content:url(../img/trophy.png);
 }
