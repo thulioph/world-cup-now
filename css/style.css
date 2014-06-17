@@ -1,12 +1,35 @@
+/* ==========================================================================
+   RESET
+   ========================================================================== */
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,caption,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{
+border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+body{line-height:1}
+ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+table{border-collapse:collapse;border-spacing:0}
+
+/* ==========================================================================
+   CUSTOM
+   ========================================================================== */
+
+*,
+*:before,
+*:after {
+	 -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
 body {
+	font-size: 10px;
+	font-family: Verdana, Geneva, sans-serif;
 	-webkit-transition: all .2s linear;
 	-moz-transition: all .2s linear;
 	-ms-transition: all .2s linear;
 	-o-transition: all .2s linear;
 	transition: all .2s linear;
-
-	color: orange;
-	font-size: 1em;
 }
 
 .carregando,
@@ -29,67 +52,176 @@ body {
 .error::before {
 	content: 'Deu erro, desculpe mas é free, não reclame!';
 }
-.placar-casa {
-	background-color: gray;
-	padding: 2px;
-}
-.placar-visitante {
-	background-color: blue;
-	padding: 2px;
-}
-.perdedor {
-	background-color: red !important;
-	position: relative;
-}
-.perdedor::after {
-	content: 'PERDEU!';
-	display: inline-block;
-	position: absolute;
-	left: 20px;
-	top: 0;
-	color: red;
-	font-size: 1.2em;
-}
+
+/*partida*/
 .partida {
-	background-color: gray;
-	margin-bottom: 20px;
 	width: 100%;
+	height: auto;
+	margin-bottom: 20px;
 	position: relative;
+	background-color: #B4CAE3;
+	text-align: center;
+	padding-bottom: 10px;
 }
-.jogo-encerrado {
-	text-decoration: line-through;
+/*arenas*/
+.arena-das-dunas {
+	background: url('http://blogdobg.com.br/wp-content/uploads/2014/01/IMG_0599.jpg') no-repeat;
+	background-size: cover;
 }
+.arena-da-baixada {
+	background: url('http://imagens.globoradio.globo.com/globoradio/fotosGen/4282/428119.jpg') no-repeat;
+	background-size: cover;
+}
+.arena-amazonia {
+	background: url('http://www.copa2014.gov.br/sites/default/files/arenadamazonia_interna1_820_portaldacopa.jpg') no-repeat;
+	background-size: cover;
+}
+.arena-pantanal {
+	background: url('http://imguol.com/c/esporte/2014/03/11/arena-pantanal-realizou-na-segunda-feira-1103-o-primeiro-teste-de-iluminacao-1394563405760_956x500.jpg') no-repeat;
+	background-size: cover;
+}
+.arena-beira-rio {
+	background: url('http://wp.clicrbs.com.br/blogdobola/files/2014/01/1508502_653922797980308_128253638_n.jpg') no-repeat;
+	background-size: cover;
+}
+.arena-sao-paulo {
+	background: url('http://centralcopa2014.info/wp-content/uploads/2013/08/arena_de_sao_paulo.jpg') no-repeat;
+	background-size: cover;
+}
+.maracana {
+	background: url('http://static.estadiovip.com.br/wp-content/uploads/maracana_obras2_afp.jpg_95.jpg') no-repeat;
+	background-size: cover;
+}
+.arena-mineirao {
+	background: url('http://canelada.com.br/wp-content/uploads/2012/11/20120807193826558580i.jpg') no-repeat;
+	background-size: cover;
+}
+.arena-pernambuco {
+	background: url('http://www.mogmo.com.br/blog/wp-content/uploads/2014/03/arenape2.jpg') no-repeat;
+	background-size: cover;
+}
+.arena-nacional {
+	background: url('http://veja.abril.com.br/blog/ricardo-setti/files/2013/02/estadio-nacional-brasilia-maquete1-440x279.jpg') no-repeat;
+	background-size: cover;
+}
+.arena-fonte-nova {
+	background: url('http://www.ibahia.com/a/blogs/ibahiafc/files/2013/03/RTEmagicC_Fonte_Nova_txdam122936_d4837a.jpg.jpg') no-repeat;
+	background-size: cover;
+}
+.arena-castelao {
+	background: url('http://s2.glbimg.com/zHeJ_S_M7k3WfLc8CzSb12IT7g2YQE-RsCfeSlZvuD_QwNTFLD41L4kzf8G8RnJM/s.glbimg.com/es/ge/f/original/2013/02/01/estadiocastelao_-ernestorodrigues_ae_1.jpg') no-repeat;
+	background-size: cover;
+}
+
 .finalizada {
+	background-color: #A1A1A1;
+}
+.selecao {
+	width: 45%;
+	height: auto;
+	max-height: 25%;
+	background: rgba(255,255,255, .8);
+	display: inline-block;
+	padding: 10px 0 1px 0;
+	margin-bottom: 10px;
+	/*background: rgba(165, 183, 204, .8);*/
+}
+.img-escudo {
+	width: 30px;
+	height: 30px;
+	margin: 0 auto;
+}
+.nome-time {
+	font-size: 2em;
+	text-transform: uppercase;
+	margin: 20px 0;
+	height: 40px;
+}
+.placar {
+	font-size: 1.4em;
+	padding: 5px 5px 0 5px;
 	background-color: black;
+	color: #ffffff;
+}
+/*info-jogo*/
+.info-jogo {
+	width: 100%;
+	max-height: 120px;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	margin: 0 auto;
+	background: rgba(255,255,255, .8);
+}
+.data-jogo,
+.hora-jogo,
+.status-jogo {
+	font-size: 1.6em;
+	margin: 10px 0;
 	position: relative;
 }
-.finalizada::after {
-	content: 'JOGO FINALIZADO!';
-	position: absolute;
+.hora-jogo,
+.status-jogo {
+	margin-bottom: 10px;
+}
+.data-jogo::before {
+	content: '';
+	width: 15px;
+	height: 15px;
+	margin-right: 10px;
 	display: inline-block;
-	right: 0;
-	top: 0;
-	text-transform: uppercase;
-	color: #ffffff;
-	font-size: 2em;
+	background: url('http://iconmonstr.com/g/gd/makefg.php?i=s2/default/iconmonstr-calendar-5-icon.png') no-repeat;
+	background-size: 15px 15px;
+	vertical-align: top;
+}
+.hora-jogo::before {
+	content: '';
+	width: 15px;
+	height: 15px;
+	margin-right: 10px;
+	display: inline-block;
+	background: url('http://iconmonstr.com/g/gd/makefg.php?i=s2/default/iconmonstr-time-icon.png') no-repeat;
+	background-size: 15px 15px;
+	vertical-align: top;
+}
+.local-jogo {
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	border-radius: 8px;
+	display: none;
 }
 .link-jogo {
 	text-decoration: none;
-	background-color: purple;
-	font-size: 2em;
+	background-color: black;
+	font-size: 1.8em;
 	padding: 5px;
+	color: #ffffff;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -100px;
 	display: none;
+}
+.perdedor {
+	background-color: red;
+	position: relative;
+}
+.perdedor::after {
+	/*content: 'PERDEU!';*/
+	content: '';
+	display: inline-block;
+	position: absolute;
+	right: 30px;
+	top: 5px;
+	color: red;
+	font-size: 1.2em;
 }
 .ao-vivo {
 	display: block;
-}
-.local-jogo {
-	width: 200px;
-	height: 200px;
-	overflow: hidden;
-	display: inline-block;
-	padding: 2px;
-	background-color: yellow;
 }
 .sem-foto {
 	display: none;

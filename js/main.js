@@ -39,21 +39,27 @@ $(document).on('ready', function(){
 				aside = document.createElement('aside');
 				aside.classList.add('partida');
 
-				h1 = document.createElement('h1');
+				div1 = document.createElement('div');
+				div1.classList.add('selecao', 'selecao1');
+
+				div2 = document.createElement('div');
+				div2.classList.add('selecao', 'selecao2');
+
+				h1Casa = document.createElement('h1');
 				placarCasa = document.createElement('span');
-				h1.classList.add('time-casa');
-				placarCasa.classList.add('placar-casa');
+				h1Casa.classList.add('nome-time');
+				placarCasa.classList.add('placar');
 
 				figureCasa = document.createElement('figure');
-				figureCasa.classList.add('img-casa');
+				figureCasa.classList.add('img-escudo');
 
-				h2 = document.createElement('h2');
+				h1Visitante = document.createElement('h1');
 				placarVisitante = document.createElement('span');
-				h2.classList.add('time-visitante');
-				placarVisitante.classList.add('placar-visitante');
+				h1Visitante.classList.add('nome-time');
+				placarVisitante.classList.add('placar');
 
 				figureVisitante = document.createElement('figure');
-				figureVisitante.classList.add('img-visitante');
+				figureVisitante.classList.add('img-escudo');
 
 				pHora = document.createElement('p');
 				pHora.classList.add('hora-jogo');
@@ -70,26 +76,33 @@ $(document).on('ready', function(){
 				localJogo = document.createElement('img');
 				localJogo.classList.add('local-jogo');
 
+				infoJogo = document.createElement('div');
+				infoJogo.classList.add('info-jogo');
+
 				// append dos elementos
-					aside.appendChild(h1);
-					aside.appendChild(figureCasa);
-					aside.appendChild(placarCasa);
+				aside.appendChild(div1);
+				aside.appendChild(div2);
+				aside.appendChild(infoJogo);
 
-					aside.appendChild(h2);
-					aside.appendChild(figureVisitante);
-					aside.appendChild(placarVisitante);
+				div1.appendChild(figureCasa);
+				div1.appendChild(h1Casa);
+				div1.appendChild(placarCasa);
 
-					aside.appendChild(pHora);
-					aside.appendChild(pData);
-					aside.appendChild(linkJogo);
-					aside.appendChild(localJogo);
-					aside.appendChild(pStatus);
+				div2.appendChild(figureVisitante);
+				div2.appendChild(h1Visitante);
+				div2.appendChild(placarVisitante);
 
-					body.appendChild(aside);
+				infoJogo.appendChild(pData);
+				infoJogo.appendChild(pHora);
+				infoJogo.appendChild(pStatus);
+				infoJogo.appendChild(linkJogo);
+				infoJogo.appendChild(localJogo);
+
+				body.appendChild(aside);
 
 				// definindo jogos
-				h1.innerHTML = timecasa;
-				h2.innerHTML = timevisitante;
+				h1Casa.innerHTML = timecasa;
+				h1Visitante.innerHTML = timevisitante;
 
 				// definindo escudos
 				figureCasa.innerHTML = "<img src='" + fotoCasa + "' />";
@@ -113,11 +126,29 @@ $(document).on('ready', function(){
 
 				// inserindo imagem das arenas
 				if(local == 'Arena das Dunas') {
-					localJogo.setAttribute('src', 'http://blogdobg.com.br/wp-content/uploads/2014/01/IMG_0599.jpg');
+					aside.classList.add('arena-das-dunas');
 				} else if (local == 'Arena da Baixada') {
-					localJogo.setAttribute('src', 'http://imagens.globoradio.globo.com/globoradio/fotosGen/4282/428119.jpg');
-				} else {
-					localJogo.classList.add('sem-foto');
+					aside.classList.add('arena-da-baixada');
+				} else if (local == 'Arena Amazônia') {
+					aside.classList.add('arena-amazonia');
+				} else if (local == 'Arena Pantanal') {
+					aside.classList.add('arena-pantanal');
+				} else if (local == 'Arena Beira-Rio') {
+					aside.classList.add('arena-beira-rio');
+				} else if (local == 'Arena de São Paulo') {
+					aside.classList.add('arena-sao-paulo');
+				} else if (local == 'Maracanã') {
+					aside.classList.add('maracana');
+				} else if (local == 'Arena Mineirão') {
+					aside.classList.add('arena-mineirao');
+				} else if (local == 'Arena Pernambuco') {
+					aside.classList.add('arena-pernambuco');
+				} else if (local == 'Arena Nacional') {
+					aside.classList.add('arena-nacional');
+				} else if (local == 'Fonte Nova') {
+					aside.classList.add('arena-fonte-nova');
+				} else if (local == 'Arena Castelão') {
+					aside.classList.add('arena-castelao');
 				}
 
 				// definindo url
@@ -129,16 +160,15 @@ $(document).on('ready', function(){
 				}
 
 				// verificando placar perdedor
-				if(placarcasa < placarvisitante) {
+				if (placarcasa < placarvisitante) {
 					placarCasa.classList.add('perdedor');
 				}
-				if(placarvisitante < placarcasa) {
+				if (placarvisitante < placarcasa) {
 					placarVisitante.classList.add('perdedor');
 				}
 
 				// verificando partidas encerradas
 				if (status == 'Encerrada') {
-					pStatus.classList.add('jogo-encerrado');
 					aside.classList.add('finalizada');
 				}
 			};// end for
