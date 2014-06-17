@@ -139,7 +139,7 @@ $(document).on('ready', function(){
 					aside.classList.add('arena-sao-paulo');
 				} else if (local == 'Maracanã') {
 					aside.classList.add('maracana');
-				} else if (local == 'Arena Mineirão') {
+				} else if (local == 'Mineirão') {
 					aside.classList.add('arena-mineirao');
 				} else if (local == 'Arena Pernambuco') {
 					aside.classList.add('arena-pernambuco');
