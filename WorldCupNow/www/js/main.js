@@ -1,4 +1,13 @@
 $(document).on('ready', function(){
+	
+	AjaxStatusCup();
+	var tempo = 60*1000;
+	setTimeout(AjaxStatusCup,tempo);
+
+});
+
+
+function AjaxStatusCup(){
 	$.ajax({
 		url: 'http://world-cup-now.herokuapp.com/proxy.php',
 		dataType: 'JSON',
@@ -132,7 +141,8 @@ $(document).on('ready', function(){
 			console.log('Error!');
 		}
 	})
-});
+}
+
 
 function create_content_site(){
 
