@@ -18,5 +18,5 @@ Para acompanhar os jogos do dia, placar e horário, acesse o [Demo](http://world
 - [Globo.com](http://globo.com) por ter cedido de forma indireta a url de consumo rsrs
 - [Sérgio Hampel](http://fb.com/sergiohampel) por me ajudar numa besteira que fez funcionar :)
 
-## Licensa
+## Licença
 [MIT License](http://thulioph.mit-license.org/) © thulioph
