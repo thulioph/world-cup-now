@@ -73,7 +73,7 @@ function startAjax() {
 						aside.classList.add('arena-das-dunas');
 					} else if (local == 'Arena da Baixada') {
 						aside.classList.add('arena-da-baixada');
-					} else if (local == 'Arena Amazônia') {
+					} else if (local == 'Arena da Amazônia') {
 						aside.classList.add('arena-amazonia');
 					} else if (local == 'Arena Pantanal') {
 						aside.classList.add('arena-pantanal');
@@ -200,4 +200,9 @@ function createStructure(){
 	infoJogo.appendChild(localJogo);
 
 	body.appendChild(aside);
+}
+
+function notification() {
+	var notification = new Notification(title, options);
+	console.log(notification);
 }
