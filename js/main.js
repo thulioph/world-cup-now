@@ -97,11 +97,9 @@ function startAjax() {
 
 				// verificando placar perdedor
 					if (placarcasa < placarvisitante) {
-						placarCasa.classList.add('perdedor');
 						placarVisitante.classList.add('vencedor');
 					}
 					if (placarvisitante < placarcasa) {
-						placarVisitante.classList.add('perdedor');
 						placarCasa.classList.add('vencedor');
 					}
 
@@ -117,13 +115,6 @@ function startAjax() {
 						linkJogo.setAttribute('target', '_blank');
 					} else if (status == 'Encerrada') {
 						pStatus.classList.add('finalizada');
-
-						// após encerrada verifica  o vencedor e adicionando troféu
-							if (placarcasa < placarvisitante) {
-								placarVisitante.classList.add('trophy');
-							} else if (placarvisitante < placarcasa) {
-								placarCasa.classList.add('trophy');
-							}
 					}
 
 			};
@@ -180,9 +171,6 @@ function createStructure(){
 	pStatus = document.createElement('p');
 	pStatus.classList.add('status-jogo');
 
-	figureArena = document.createElement('img');
-	figureArena.classList.add('arena-jogo');
-
 	linkJogo = document.createElement('a');
 	linkJogo.classList.add('link-jogo');
 
@@ -194,7 +182,6 @@ function createStructure(){
 
 	// append dos elementos
 	aside.appendChild(div1);
-	aside.appendChild(figureArena);
 	aside.appendChild(div2);
 	aside.appendChild(infoJogo);
 
