@@ -1,3 +1,5 @@
+![Project Logo](img/logo.png "World Cup Now")
+
 # World Cup Now!
 Projeto criado para acompanhar os jogos, placar, horário e local dos jogos de cada dia da copa.
 
