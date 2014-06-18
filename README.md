@@ -1,9 +1,12 @@
 # World Cup Now!
 Projeto desenvolvido para acompanhar os resultados dos jogos da copa do mundo 2014.
 
-## Demo
-Para acompanhar os jogos do dia, placar e horário, acesse o [Demo](http://world-cup-now.herokuapp.com).
+## Descrição
+Projeto criado para acompanhar os jogos, placar, horário e local dos jogos de cada dia da copa.
 
+## Download
+- [Live Demo](http://world-cup-now.herokuapp.com)
+- [Android APK](http://bit.ly/android-world-cup-now)
 
 ## Contibuir
 > Antes de contribuir, observe as [issues](@issues) e veja se alguém já está trabalhando no que você deseja.

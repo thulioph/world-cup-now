@@ -117,13 +117,13 @@ function startAjax() {
 						linkJogo.setAttribute('target', '_blank');
 					} else if (status == 'Encerrada') {
 						pStatus.classList.add('finalizada');
-					}
 
-				// verificando o vencedor e adicionando troféu
-					if (placarcasa < placarvisitante) {
-						placarVisitante.classList.add('trophy');
-					} else if (placarvisitante < placarcasa) {
-						placarCasa.classList.add('trophy');
+						// após encerrada verifica  o vencedor e adicionando troféu
+							if (placarcasa < placarvisitante) {
+								placarVisitante.classList.add('trophy');
+							} else if (placarvisitante < placarcasa) {
+								placarCasa.classList.add('trophy');
+							}
 					}
 
 			};
