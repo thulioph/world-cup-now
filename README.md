@@ -1,7 +1,4 @@
 # World Cup Now!
-Projeto desenvolvido para acompanhar os resultados dos jogos da copa do mundo 2014.
-
-## Descrição
 Projeto criado para acompanhar os jogos, placar, horário e local dos jogos de cada dia da copa.
 
 ## Download
