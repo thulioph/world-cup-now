@@ -231,6 +231,11 @@ body {
 .vencedor{
 	color: green;
 }
-.trophy:before{
-	content:url(../img/trophy.png);
+.trophy::before{
+	content: '';
+	background: url('../img/trophy.png') no-repeat;
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+	margin: 0 10px;
 }

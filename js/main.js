@@ -64,7 +64,6 @@ $(document).on('ready', function(){
 				localJogo.innerHTML = local;
 
 				// inserindo imagem das arenas
-				// inserindo imagem das arenas
 				if(local == 'Arena das Dunas') {
 					aside.classList.add('arena-das-dunas');
 				} else if (local == 'Arena da Baixada') {
@@ -73,7 +72,7 @@ $(document).on('ready', function(){
 					aside.classList.add('arena-amazonia');
 				} else if (local == 'Arena Pantanal') {
 					aside.classList.add('arena-pantanal');
-				} else if (local == 'Arena Beira-Rio') {
+				} else if (local == 'Beira-Rio') {
 					aside.classList.add('arena-beira-rio');
 				} else if (local == 'Arena de São Paulo') {
 					aside.classList.add('arena-sao-paulo');
@@ -116,10 +115,10 @@ $(document).on('ready', function(){
 
 				// Verifica o vencendor e adiciona o troféu de vitória
 				if (placarcasa < placarvisitante) {
-					placarVisitante.classList.add("trophy");
+					placarVisitante.classList.add('trophy');
 				}
 				else if (placarvisitante < placarcasa) {
-					placarCasa.classList.add("trophy");
+					placarCasa.classList.add('trophy');
 				}
 				}
 			};
