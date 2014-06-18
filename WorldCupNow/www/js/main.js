@@ -1,9 +1,7 @@
 $(document).on('ready', function(){
-	
 	AjaxStatusCup();
 	var tempo = 60*1000;
 	setTimeout(AjaxStatusCup,tempo);
-
 });
 
 
@@ -73,30 +71,30 @@ function AjaxStatusCup(){
 
 				// inserindo imagem das arenas
 				if(local == 'Arena das Dunas') {
-					figureArena.src = 'http://blogdobg.com.br/wp-content/uploads/2014/01/IMG_0599.jpg';
-				} else if (local == 'Arena da Baixada') {
-					figureArena.src = 'http://imagens.globoradio.globo.com/globoradio/fotosGen/4282/428119.jpg';
-				} else if (local == 'Arena Amazônia') {
-					figureArena.src = 'http://www.copa2014.gov.br/sites/default/files/arenadamazonia_interna1_820_portaldacopa.jpg';
-				} else if (local == 'Arena Pantanal') {
-					figureArena.src = 'http://imguol.com/c/esporte/2014/03/11/arena-pantanal-realizou-na-segunda-feira-1103-o-primeiro-teste-de-iluminacao-1394563405760_956x500.jpg';
-				} else if (local == 'Arena Beira-Rio') {
-					figureArena.src = 'http://wp.clicrbs.com.br/blogdobola/files/2014/01/1508502_653922797980308_128253638_n.jpg';
-				} else if (local == 'Arena de São Paulo') {
-					figureArena.src = 'http://centralcopa2014.info/wp-content/uploads/2013/08/arena_de_sao_paulo.jpg';
-				} else if (local == 'Maracanã') {
-					figureArena.src = 'http://static.estadiovip.com.br/wp-content/uploads/maracana_obras2_afp.jpg_95.jpg';
-				} else if (local == 'Arena Mineirão') {
-					figureArena.src = 'http://canelada.com.br/wp-content/uploads/2012/11/20120807193826558580i.jpg';
-				} else if (local == 'Arena Pernambuco') {
-					figureArena.src = 'http://www.mogmo.com.br/blog/wp-content/uploads/2014/03/arenape2.jpg';
-				} else if (local == 'Arena Nacional') {
-					figureArena.src = 'http://veja.abril.com.br/blog/ricardo-setti/files/2013/02/estadio-nacional-brasilia-maquete1-440x279.jpg';
-				} else if (local == 'Fonte Nova') {
-					figureArena.src = 'http://www.ibahia.com/a/blogs/ibahiafc/files/2013/03/RTEmagicC_Fonte_Nova_txdam122936_d4837a.jpg.jpg';
-				} else if (local == 'Arena Castelão') {
-					figureArena.src = 'http://s2.glbimg.com/zHeJ_S_M7k3WfLc8CzSb12IT7g2YQE-RsCfeSlZvuD_QwNTFLD41L4kzf8G8RnJM/s.glbimg.com/es/ge/f/original/2013/02/01/estadiocastelao_-ernestorodrigues_ae_1.jpg';
-				}
+						aside.classList.add('arena-das-dunas');
+					} else if (local == 'Arena da Baixada') {
+						aside.classList.add('arena-da-baixada');
+					} else if (local == 'Arena Amazônia') {
+						aside.classList.add('arena-amazonia');
+					} else if (local == 'Arena Pantanal') {
+						aside.classList.add('arena-pantanal');
+					} else if (local == 'Beira-Rio') {
+						aside.classList.add('arena-beira-rio');
+					} else if (local == 'Arena de São Paulo') {
+						aside.classList.add('arena-sao-paulo');
+					} else if (local == 'Maracanã') {
+						aside.classList.add('maracana');
+					} else if (local == 'Mineirão') {
+						aside.classList.add('arena-mineirao');
+					} else if (local == 'Arena Pernambuco') {
+						aside.classList.add('arena-pernambuco');
+					} else if (local == 'Arena Nacional') {
+						aside.classList.add('arena-nacional');
+					} else if (local == 'Fonte Nova') {
+						aside.classList.add('arena-fonte-nova');
+					} else if (local == 'Arena Castelão') {
+						aside.classList.add('arena-castelao');
+					}
 
 				// definindo url
 				if(status == 'Em Andamento') {
