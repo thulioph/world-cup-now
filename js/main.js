@@ -79,7 +79,7 @@ function startAjax() {
 						aside.classList.add('arena-pantanal');
 					} else if (local == 'Beira-Rio') {
 						aside.classList.add('arena-beira-rio');
-					} else if (local == 'Arena de São Paulo') {
+					} else if (local == 'Arena Corinthians') {
 						aside.classList.add('arena-sao-paulo');
 					} else if (local == 'Maracanã') {
 						aside.classList.add('maracana');
