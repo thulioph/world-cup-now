@@ -87,7 +87,7 @@ function startAjax() {
 						aside.classList.add('arena-mineirao');
 					} else if (local == 'Arena Pernambuco') {
 						aside.classList.add('arena-pernambuco');
-					} else if (local == 'Arena Nacional') {
+					} else if (local == 'Mané Garrincha') {
 						aside.classList.add('arena-nacional');
 					} else if (local == 'Fonte Nova') {
 						aside.classList.add('arena-fonte-nova');
