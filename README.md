@@ -8,7 +8,7 @@ Projeto criado para acompanhar os jogos, placar, horário e local dos jogos de c
 - [Android APK](http://bit.ly/android-world-cup-now)
 
 ## Contibuir
-> Antes de contribuir, observe as [issues](@issues) e veja se alguém já está trabalhando no que você deseja.
+> Antes de contribuir, observe as [issues](https://github.com/thulioph/world-cup-now/issues) e veja se alguém já está trabalhando no que você deseja.
 
 1. Faça um fork deste projeto!
 2. Crie  uma branch com as suas modificações: `git checkout -b minhas-modificacoes`
