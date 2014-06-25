@@ -15,6 +15,24 @@ table{border-collapse:collapse;border-spacing:0}
    CUSTOM
    ========================================================================== */
 
+.forkme img{
+	position: absolute;
+	z-index: 99999999999;
+	top: 0;
+	right: 0;
+	border: 0;
+}
+
+@font-face {
+	font-family: 'OlindaStyle';
+	src: url('fonts/original_olinda_style-webfont.eot');
+	src: url('fonts/original_olinda_style-webfont.eot?#iefix') format('embedded-opentype'),
+	url('fonts/original_olinda_style-webfont.woff') format('woff'),
+	url('fonts/original_olinda_style-webfont.ttf') format('truetype'),
+	url('fonts/original_olinda_style-webfont.svg#OlindaStyle') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 
 *,
 *:before,
@@ -23,212 +41,509 @@ table{border-collapse:collapse;border-spacing:0}
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
+
 body {
 	font-size: 10px;
-	font-family: Verdana, Geneva, sans-serif;
-	-webkit-transition: all .2s linear;
-	-moz-transition: all .2s linear;
-	-ms-transition: all .2s linear;
-	-o-transition: all .2s linear;
-	transition: all .2s linear;
+	font-family: 'OlindaStyle';
+	background-color: #feed01;
+
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
 }
 
-.carregando,
-.error {
-	background: rgba(0, 0, 0, .5);
+body::before
+,body::after {
+	display: block;
 	width: 100%;
-	height: 100%;
+	height: 5px;
+	background-color: #00963f;
+	content: '';
 }
 
-.carregando::before,
-.error::before,{
-	content: 'Carregando os jogos.. Calma que a internet é lenta!';
+/*
+	Carregando
+*/
+.carregando {
+	background: #feed01;
+}
+.carregando::before {
+	content: 'Carregando';
+	text-transform: uppercase;
+	width: 28%;
+	height: 20%;
+	font-size: 5.2em;
+	color: #00963f;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 2px 3px 1px #c8bb01;
 	position: absolute;
-	z-index: 9999;
+	display: inline-block;
 	top: 50%;
 	left: 50%;
-	display: inline-block;
+	margin-left: -14%;
+	margin-top: -10%;
+	background: url('../img/details.png') no-repeat bottom center;
+
+	-webkit-animation: carregando 1s infinite alternate;
+	-moz-animation: carregando 1s infinite alternate;
+	-ms-animation: carregando 1s infinite alternate;
+	-o-animation: carregando 1s infinite alternate;
+	animation: carregando 1s infinite alternate;
 }
 
+/*
+	Animações para o carregando
+*/
+
+@-webkit-keyframes carregando {
+	0% {
+		opacity: .2;
+		width: 0%;
+	}
+	50% {
+		opacity: .6;
+		width: 14%;
+	}
+	100% {
+		opacity: 1;
+		width: 28%;
+	}
+}
+@-o-keyframes carregando {
+	0% {
+		opacity: .2;
+		width: 0%;
+	}
+	50% {
+		opacity: .6;
+		width: 14%;
+	}
+	100% {
+		opacity: 1;
+		width: 28%;
+	}
+}
+@-moz-keyframes carregando {
+	0% {
+		opacity: .2;
+		width: 0%;
+	}
+	50% {
+		opacity: .6;
+		width: 14%;
+	}
+	100% {
+		opacity: 1;
+		width: 28%;
+	}
+}
+@keyframes carregando {
+	0% {
+		opacity: .2;
+		width: 0%;
+	}
+	50% {
+		opacity: .6;
+		width: 14%;
+	}
+	100% {
+		opacity: 1;
+		width: 28%;
+	}
+}
+
+/*
+	Ajax / Erorr
+*/
+
+.error {
+	background: #feed01;
+}
 .error::before {
-	content: 'Deu erro, desculpe mas é free, não reclame!';
+	content: 'Tente em alguns minutos';
+	text-transform: uppercase;
+	width: 36%;
+	height: 23%;
+	font-size: 5.2em;
+	color: #00963f;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 2px 3px 1px #c8bb01;
+	position: absolute;
+	display: inline-block;
+	top: 50%;
+	left: 50%;
+	margin-left: -230px;
+	margin-top: -60px;
+	background: url('../img/details.png') no-repeat bottom center;
+}
+.error::after {
+	content: '☻';
+	font-size: 15em;
+	position: absolute;
+	display: inline-block;
+	top: 50%;
+	left: 25%;
+	margin-top: -70px;
+	margin-left: -55px;
+	width: 110px;
+	height: 140px;
+	color: #00963f;
+	background: transparent;
 }
 
-/*partida*/
-.partida {
-	width: 100%;
+
+.titulo-principal{
+	margin: 10px auto 30px auto;
+	padding: 10px 0;
+	width: 28%;
 	height: auto;
-	margin-bottom: 20px;
+	background: url('../img/details.png') no-repeat bottom center;
+	color: #00963f;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 2px 3px 1px #c8bb01;
+	font-size: 5.2em;
+}
+
+.partida {
 	position: relative;
+	margin: 0 auto 40px auto;
+	padding: 20px 0;
+	width: 80%;
+	height: auto;
+	border-top: .2em dotted #214e5f;
 	text-align: center;
 }
-.finalizada {
-	color: red;
-	background: none !important;
-}
+
 .selecao {
-	width: 45%;
+	width: auto;
 	height: auto;
-	max-height: 25%;
-	background: rgba(255,255,255, .8);
-	display: inline-block;
-	padding: 10px 0 1px 0;
-	margin-bottom: 10px;
-	/*background: rgba(165, 183, 204, .8);*/
 }
-.img-escudo {
-	width: 30px;
-	height: 30px;
-	margin: 0 auto;
-}
-.nome-time {
-	font-size: 2em;
-	text-transform: uppercase;
-	margin: 20px 0;
-	height: 40px;
-}
-.placar {
-	font-size: 5em;
-	padding: 5px 5px 0 5px;
-	/*background-color: black;*/
-	/*color: #ffffff;*/
-}
-/*info-jogo*/
-.info-jogo {
-	width: 100%;
-	height: 120px;
+.selecao,
+.img-escudo,
+.nome-time,
+.info-time,
+.placar,
+.versus
+ {
 	display: inline-block;
 	vertical-align: middle;
 	position: relative;
-	margin: 0 auto;
-	border-bottom: 1px solid rgb(213, 213, 213);
 }
+
+.versus {
+	font-size: 5em;
+	color: #00963f;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0 5px;
+}
+
+.img-escudo {
+	width: 30px;
+	height: 30px;
+	margin: 0 10px;
+	border-radius: 2px;
+}
+
+.nome-time {
+	color: #214e5f;
+	font-size: 1.7em;
+	text-align: center;
+}
+
+.placar {
+	font-size: 5em;
+	color: #214e5f;
+	border-radius: 100%;
+	border: 1px solid #214e5f;
+	background: transparent;
+	padding: 5px;
+	width: 70px;
+	height: 70px;
+	display: inline-block;
+	margin: 0 30px;
+}
+
+.info-time {
+	width: auto;
+	border: 1px solid #214e5f;
+	position: relative;
+	padding: 10px;
+}
+
+.info-time::after,
+.info-time-2::before {
+	content: '';
+	width: 17px;
+	height: 17px;
+	border-radius: 100%;
+	display: inline-block;
+	position: absolute;
+	background: url('../img/bola.png') no-repeat;
+	right: -9px;
+	top: 35%;
+}
+
+.info-time-2::after {
+	content: '';
+	display: none;
+}
+
+.info-time-2::before {
+	content: '';
+	background: url('../img/bola.png') no-repeat;
+	left: -9px;
+}
+
+.info-jogo {
+	width: 100%;
+	height: auto;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	margin: 20px auto auto auto;
+}
+
 .data-jogo,
 .hora-jogo,
-.status-jogo {
-	font-size: 1.6em;
-	margin: 10px 0;
+.local-jogo,
+.rodada-jogo {
+	font-size: 2em;
 	position: relative;
+	color: #00963f;
+	display: inline-block;
+	margin: 0 10px;
 }
-.hora-jogo,
+
+.rodada-jogo {
+	display: block;
+	margin: 10px 0;
+}
+
 .status-jogo {
-	margin-bottom: 10px;
+	font-size: 2.8em;
+	text-transform: uppercase;
+	margin: 0 auto 20px auto;
+	color: #e7c00a;
 }
+
+.finalizada {color: red !important;}
+.andamento {color: #00963f !important;}
+.aguardando {color: #e7c00a !important;}
+
 .data-jogo::before {
 	content: '';
 	width: 15px;
 	height: 15px;
 	margin-right: 10px;
 	display: inline-block;
-	background: url('http://iconmonstr.com/g/gd/makefg.php?i=s2/default/iconmonstr-calendar-5-icon.png') no-repeat;
+	background: url('http://iconmonstr.com/g/gd/makefg.php?i=s2/default/iconmonstr-calendar-5-icon.png&r=38&g=157&b=60') no-repeat;
 	background-size: 15px 15px;
-	vertical-align: top;
+	vertical-align: middle;
 }
+
 .hora-jogo::before {
 	content: '';
 	width: 15px;
 	height: 15px;
 	margin-right: 10px;
 	display: inline-block;
-	background: url('http://iconmonstr.com/g/gd/makefg.php?i=s2/default/iconmonstr-time-icon.png') no-repeat;
+	background: url('http://iconmonstr.com/g/gd/makefg.php?i=s2/default/iconmonstr-time-icon.png&r=38&g=157&b=60') no-repeat;
 	background-size: 15px 15px;
-	vertical-align: top;
-}
-.local-jogo {
-	display: inline-block;
-	position: relative;
 	vertical-align: middle;
-	width: 150px;
-	height: 150px;
-	overflow: hidden;
-	border-radius: 8px;
-	display: none;
-}
-.link-jogo {
-	text-decoration: none;
-	/*background-color: black;*/
-	background-color: rgba(255,255,255, .8);
-	font-size: 1.8em;
-	padding: 5px;
-	color: #000;
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	margin-left: -100px;
-	display: none;
-}
-.ao-vivo {
-	display: block;
-}
-.sem-foto {
-	display: none;
 }
 
-/*arenas*/
-.arena-das-dunas {
-	background: url('http://blogdobg.com.br/wp-content/uploads/2014/01/IMG_0599.jpg') no-repeat;
-	background-size: cover;
+.local-jogo::before {
+	content: '';
+	width: 15px;
+	height: 15px;
+	margin-right: 10px;
+	display: inline-block;
+	background: url('http://iconmonstr.com/g/gd/makefg.php?i=s2/default/iconmonstr-location-icon.png&r=38&g=157&b=60') no-repeat;
+	background-size: 15px 15px;
+	vertical-align: middle;
 }
-.arena-da-baixada {
-	background: url('http://imagens.globoradio.globo.com/globoradio/fotosGen/4282/428119.jpg') no-repeat;
-	background-size: cover;
-}
-.arena-amazonia {
-	background: url('http://www.copa2014.gov.br/sites/default/files/arenadamazonia_interna1_820_portaldacopa.jpg') no-repeat;
-	background-size: cover;
-}
-.arena-pantanal {
-	background: url('http://imguol.com/c/esporte/2014/03/11/arena-pantanal-realizou-na-segunda-feira-1103-o-primeiro-teste-de-iluminacao-1394563405760_956x500.jpg') no-repeat;
-	background-size: cover;
-}
-.arena-beira-rio {
-	background: url('http://wp.clicrbs.com.br/blogdobola/files/2014/01/1508502_653922797980308_128253638_n.jpg') no-repeat;
-	background-size: cover;
-}
-.arena-sao-paulo {
-	background: url('http://centralcopa2014.info/wp-content/uploads/2013/08/arena_de_sao_paulo.jpg') no-repeat;
-	background-size: cover;
-}
-.maracana {
-	background: url('http://static.estadiovip.com.br/wp-content/uploads/maracana_obras2_afp.jpg_95.jpg') no-repeat;
-	background-size: cover;
-}
-.arena-mineirao {
-	background: url('http://canelada.com.br/wp-content/uploads/2012/11/20120807193826558580i.jpg') no-repeat;
-	background-size: cover;
-}
-.arena-pernambuco {
-	background: url('http://www.mogmo.com.br/blog/wp-content/uploads/2014/03/arenape2.jpg') no-repeat;
-	background-size: cover;
-}
-.arena-nacional {
-	background: url('http://veja.abril.com.br/blog/ricardo-setti/files/2013/02/estadio-nacional-brasilia-maquete1-440x279.jpg') no-repeat;
-	background-size: cover;
-}
-.arena-fonte-nova {
-	background: url('http://www.ibahia.com/a/blogs/ibahiafc/files/2013/03/RTEmagicC_Fonte_Nova_txdam122936_d4837a.jpg.jpg') no-repeat;
-	background-size: cover;
-}
-.arena-castelao {
-	background: url('http://s2.glbimg.com/zHeJ_S_M7k3WfLc8CzSb12IT7g2YQE-RsCfeSlZvuD_QwNTFLD41L4kzf8G8RnJM/s.glbimg.com/es/ge/f/original/2013/02/01/estadiocastelao_-ernestorodrigues_ae_1.jpg') no-repeat;
-	background-size: cover;
-}
-/*fim das arenas*/
 
-.topo{
-	text-align: center;
-	font-size:  3em;
-	margin: 10px;
-	padding: 10px 0;
-}
-.vencedor {
-	color: green;
-}
-.vencedor::before{
+.selecao1.vencedor::before,
+.selecao2.vencedor::after {
 	content: '';
 	background: url('../img/trophy.png') no-repeat;
 	width: 32px;
 	height: 32px;
 	display: inline-block;
 	margin: 0 10px;
+	vertical-align: middle;
+
+	-webkit-animation: vencedor .5s infinite alternate;
+	-moz-animation: vencedor .5s infinite alternate;
+	-ms-animation: vencedor .5s infinite alternate;
+	-o-animation: vencedor .5s infinite alternate;
+	animation: vencedor .5s infinite alternate;
+}
+
+/*
+	Animações para o vencedor
+*/
+
+@-webkit-keyframes vencedor {
+	0% {margin-top: 10px;}
+	50% {margin-top: 5px;}
+	100% {margin-top: 0px;}
+}
+@-o-keyframes vencedor {
+	0% {margin-top: 10px;}
+	50% {margin-top: 5px;}
+	100% {margin-top: 0px;}
+}
+@-moz-keyframes vencedor {
+	0% {margin-top: 10px;}
+	50% {margin-top: 5px;}
+	100% {margin-top: 0px;}
+}
+@keyframes vencedor {
+	0% {margin-top: 10px;}
+	50% {margin-top: 5px;}
+	100% {margin-top: 0px;}
+}
+
+
+/*
+	LIGHT EVENTS
+*/
+
+body.escuro {background: #214e5f;}
+
+body.escuro::before
+,body.escuro::after {
+	display: block;
+	width: 100%;
+	height: 5px;
+	background-color: #FEED01;
+	content: '';
+}
+
+body.escuro .titulo-principal {
+	text-shadow: 2px 3px 1px #c8bb01;
+}
+
+body.escuro .titulo-principal,
+body.escuro .placar,
+body.escuro .nome-time,
+body.escuro .data-jogo,
+body.escuro .hora-jogo,
+body.escuro .local-jogo,
+body.escuro .rodada-jogo,
+body.escuro .versus {
+	color: #feed01;
+}
+
+body.escuro .partida {border-top: 0.2em dotted #feed01;}
+
+body.escuro .andamento {color: #214e5f !important;}
+body.escuro .aguardando {color: #e7c00a !important;}
+
+body.escuro .info-time,
+body.escuro .placar {
+	border: 1px solid #feed01;
+}
+
+body.escuro .data-jogo::before {
+	content: '';
+	width: 15px;
+	height: 15px;
+	margin-right: 10px;
+	display: inline-block;
+	background: url('http://iconmonstr.com/g/gd/makefg.php?i=s2/default/iconmonstr-calendar-5-icon.png&r=254&g=237&b=1') no-repeat;
+	background-size: 15px 15px;
+	vertical-align: middle;
+}
+
+body.escuro .hora-jogo::before {
+	content: '';
+	width: 15px;
+	height: 15px;
+	margin-right: 10px;
+	display: inline-block;
+	background: url('http://iconmonstr.com/g/gd/makefg.php?i=s2/default/iconmonstr-time-icon.png&r=254&g=237&b=1') no-repeat;
+	background-size: 15px 15px;
+	vertical-align: middle;
+}
+
+body.escuro .local-jogo::before {
+	content: '';
+	width: 15px;
+	height: 15px;
+	margin-right: 10px;
+	display: inline-block;
+	background: url('http://iconmonstr.com/g/gd/makefg.php?i=s2/default/iconmonstr-location-icon.png&r=254&g=237&b=1') no-repeat;
+	background-size: 15px 15px;
+	vertical-align: middle;
+}
+
+
+/*
+	MEDIA QUERIES
+*/
+
+@media only screen and (max-device-width: 320px) {
+	.titulo-principal,
+	.partida {
+		width: 100%;
+	}
+	.partida {
+		margin-bottom: 20px;
+		padding-bottom: 0;
+	}
+	.forkme {
+		display: none;
+	}
+	.versus {
+		margin: 10px 0 15px 0;
+		display: block;
+	}
+	.placar {
+		width: 50px;
+		height: 50px;
+		font-size: 3em;
+		margin: 0 20px;
+		float: right;
+	}
+	.nome-time {
+		font-size: 2em;
+	}
+	.info-time {
+		float: left;
+	}
+	.info-time::after,
+	.info-time-2::before {
+		content: '';
+		display: none;
+	}
+	.selecao {
+		width: 90%;
+	}
+	.selecao1.vencedor::before,
+	.selecao2.vencedor::after {
+		content: '';
+		top: 12px;
+		right: -23px;
+		position: absolute;
+		/*margin-top: 10px;*/
+
+		-webkit-animation: vencedor 0s;
+		-moz-animation: vencedor 0s;
+		-ms-animation: vencedor 0s;
+		-o-animation: vencedor 0s;
+		animation: vencedor 0s;
+	}
+	.data-jogo,
+	.hora-jogo,
+	.local-jogo {
+		margin: 0 10px 10px 10px;
+	}
 }
