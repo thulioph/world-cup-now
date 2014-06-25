@@ -97,9 +97,9 @@ function startAjax() {
 
 				// altera a fonte de acordo com o nome do time
 					if (timecasa.length >= '15') {
-						h1Casa.style.fontSize = '1.5em';
+						h1Casa.style.fontSize = '1em';
 					} else if (timevisitante.length >= '15') {
-						h1Visitante.style.fontSize = '1.4em';
+						h1Visitante.style.fontSize = '1em';
 					}
 
 			};
