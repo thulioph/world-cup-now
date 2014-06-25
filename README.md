@@ -20,6 +20,7 @@ Projeto criado para acompanhar os jogos, placar, horário e local dos jogos de c
 - [Globo.com](http://globo.com) por ter cedido de forma indireta a url de consumo rsrs
 - [Sérgio Hampel](http://fb.com/sergiohampel) por me ajudar numa besteira que fez funcionar :)
 - [Jorge Kury](https://github.com/jorgekury) que desenvolveu a versão android. :ok_hand:
+- [Caique de Lira](http://fb.com/c.j235) desenvolveu o layout. :ok_hand:
 
 ## Licença
 [MIT License](http://thulioph.mit-license.org/) © thulioph
