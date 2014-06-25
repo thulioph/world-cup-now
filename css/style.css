@@ -491,6 +491,33 @@ body.escuro .local-jogo::before {
 */
 
 @media only screen and (max-device-width: 320px) {
+	.splash::after {
+		content: 'World Cup Now!';
+		width: 100%;
+		color: #00963f;
+		height: 130px;
+		background: transparent;
+		border-top: 5px solid #00963f;
+		padding-top: 20px;
+		font-size: 6em;
+		text-align: center;
+	}
+	.carregando::before {
+		content: 'carregando';
+		top: 50%;
+		margin-top: -37px;
+		height: 13%;
+		width: 100%;
+		left: 7%;
+		font-size: 4.6em;
+		margin-left: 0;
+
+		-webkit-animation: carregando 1s infinite alternate;
+		-moz-animation: carregando 1s infinite alternate;
+		-ms-animation: carregando 1s infinite alternate;
+		-o-animation: carregando 1s infinite alternate;
+		animation: carregando 1s infinite alternate;
+	}
 	.titulo-principal,
 	.partida {
 		width: 100%;
@@ -545,5 +572,66 @@ body.escuro .local-jogo::before {
 	.hora-jogo,
 	.local-jogo {
 		margin: 0 10px 10px 10px;
+	}
+
+	/*
+	Animações para o carregando
+	*/
+
+	@-webkit-keyframes carregando {
+		0% {
+			opacity: .2;
+			width: 0%;
+		}
+		50% {
+			opacity: .6;
+			width: 50%;
+		}
+		100% {
+			opacity: 1;
+			width: 82%;
+		}
+	}
+	@-o-keyframes carregando {
+		0% {
+			opacity: .2;
+			width: 0%;
+		}
+		50% {
+			opacity: .6;
+			width: 50%;
+		}
+		100% {
+			opacity: 1;
+			width: 82%;
+		}
+	}
+	@-moz-keyframes carregando {
+		0% {
+			opacity: .2;
+			width: 0%;
+		}
+		50% {
+			opacity: .6;
+			width: 50%;
+		}
+		100% {
+			opacity: 1;
+			width: 82%;
+		}
+	}
+	@keyframes carregando {
+		0% {
+			opacity: .2;
+			width: 0%;
+		}
+		50% {
+			opacity: .6;
+			width: 50%;
+		}
+		100% {
+			opacity: 1;
+			width: 82%;
+		}
 	}
 }

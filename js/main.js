@@ -15,7 +15,7 @@ function startAjax() {
 
 		success: function(tabela) {
 			var body = document.querySelector('body');
-			body.classList.remove('carregando');
+			body.classList.remove('carregando', 'splash');
 
 			// titulo do projeto
 				titulo = document.createElement('h1');
@@ -245,5 +245,5 @@ function lightEvent() {
 
 function splashScreen() {
 	window.setTimeout(startAjax, 5000);
-	document.body.classList.add('carregando');
+	document.body.classList.add('carregando', 'splash');
 }
