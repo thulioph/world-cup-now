@@ -271,6 +271,7 @@ body::before
 
 .info-time {
 	width: auto;
+	width: 180px;
 	border: 1px solid #214e5f;
 	position: relative;
 	padding: 10px;
