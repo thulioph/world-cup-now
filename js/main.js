@@ -1,6 +1,9 @@
 $(document).on('ready', function() {
 	lightEvent();
 	splashScreen();
+
+	// atualizando placar a cada 01 minuto
+	window.setInterval(startAjax, 60000);
 });
 
 
@@ -87,7 +90,7 @@ function startAjax() {
 					if (status == 'Encerrada') {
 						pStatus.classList.add('finalizada');
 					} else if (status == 'Criada') {
-						pStatus.classList.add('finalizada');
+						pStatus.classList.add('aguardando');
 						pStatus.textContent = 'Aguardando o começo';
 					} else if (status == 'Em Andamento') {
 						pStatus.classList.add('andamento');
