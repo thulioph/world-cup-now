@@ -313,7 +313,8 @@ body::before
 .data-jogo,
 .hora-jogo,
 .local-jogo,
-.rodada-jogo {
+.rodada-jogo,
+.tempo-que-falta {
 	font-size: 2em;
 	position: relative;
 	color: #00963f;
@@ -321,10 +322,29 @@ body::before
 	margin: 0 10px;
 }
 
-.rodada-jogo {
+.rodada-jogo,
+.tempo-que-falta {
 	display: block;
 	margin: 10px 0;
 }
+
+.tempo-que-falta::before {
+	content: '';
+	background: url('http://iconmonstr.com/g/gd/makefg.php?i=s2/default/iconmonstr-time-13-icon.png&r=38&g=157&b=60');
+	background-size: 15px 15px;
+	vertical-align: middle;
+	width: 15px;
+	height: 15px;
+	margin-right: 10px;
+	display: inline-block;
+
+	-webkit-animation: ampulheta .5s infinite;
+	-moz-animation: ampulheta .5s infinite;
+	-ms-animation: ampulheta .5s infinite;
+	-o-animation: ampulheta .5s infinite;
+	animation: ampulheta .5s infinite;
+}
+
 
 .status-jogo {
 	font-size: 2.8em;
@@ -380,11 +400,11 @@ body::before
 	margin: 0 10px;
 	vertical-align: middle;
 
-	-webkit-animation: vencedor .5s infinite alternate;
-	-moz-animation: vencedor .5s infinite alternate;
-	-ms-animation: vencedor .5s infinite alternate;
-	-o-animation: vencedor .5s infinite alternate;
-	animation: vencedor .5s infinite alternate;
+	-webkit-animation: vencedor 2s infinite alternate;
+	-moz-animation: vencedor 2s infinite alternate;
+	-ms-animation: vencedor 2s infinite alternate;
+	-o-animation: vencedor 2s infinite alternate;
+	animation: vencedor 2s infinite alternate;
 }
 
 /*
@@ -412,6 +432,102 @@ body::before
 	100% {margin-top: 0px;}
 }
 
+/*
+	Animações para o ampulheta
+*/
+
+@-webkit-keyframes ampulheta {
+	0% {
+		-webkit-transform: rotate(10deg);
+		-moz-transform: rotate(10deg);
+		-ms-transform: rotate(10deg);
+		-o-transform: rotate(10deg);
+		transform: rotate(10deg);
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		-moz-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		-o-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@-o-keyframes ampulheta {
+	0% {
+		-webkit-transform: rotate(10deg);
+		-moz-transform: rotate(10deg);
+		-ms-transform: rotate(10deg);
+		-o-transform: rotate(10deg);
+		transform: rotate(10deg);
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		-moz-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		-o-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@-moz-keyframes ampulheta {
+	0% {
+		-webkit-transform: rotate(10deg);
+		-moz-transform: rotate(10deg);
+		-ms-transform: rotate(10deg);
+		-o-transform: rotate(10deg);
+		transform: rotate(10deg);
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		-moz-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		-o-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes ampulheta {
+	0% {
+		-webkit-transform: rotate(10deg);
+		-moz-transform: rotate(10deg);
+		-ms-transform: rotate(10deg);
+		-o-transform: rotate(10deg);
+		transform: rotate(10deg);
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		-moz-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		-o-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
 
 /*
 	LIGHT EVENTS
@@ -439,6 +555,7 @@ body.escuro .data-jogo,
 body.escuro .hora-jogo,
 body.escuro .local-jogo,
 body.escuro .rodada-jogo,
+body.escuro .tempo-que-falta,
 body.escuro .versus {
 	color: #feed01;
 }

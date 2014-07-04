@@ -62,6 +62,19 @@ function startAjax() {
 				// definindo hora
 					pHora.innerHTML = horaJogo;
 
+					// verificando o tempo pro jogo começar
+						var novaHora = parseInt(horaJogo),
+							horaAtual = new Date().getHours();
+							horaRestante = Math.abs(novaHora - horaAtual);
+
+						if(horaRestante > '1') {
+							tempoProJogoComecar.innerHTML = 'Faltam ' + horaRestante + ' horas para o início do jogo';
+						} else if(horaRestante == '1') {
+							tempoProJogoComecar.innerHTML = 'Falta ' + horaRestante + ' hora para o início do jogo';
+						} else if(horaRestante == '0') {
+							tempoProJogoComecar.style.display = 'none';
+						}
+
 				// definindo data
 					pData.innerHTML = dataJogo;
 
@@ -171,6 +184,9 @@ function createStructure(){
 	rodadaJogo = document.createElement('p');
 	rodadaJogo.classList.add('rodada-jogo');
 
+	tempoProJogoComecar = document.createElement('p');
+	tempoProJogoComecar.classList.add('tempo-que-falta');
+
 	localJogo = document.createElement('p');
 	localJogo.classList.add('local-jogo');
 
@@ -198,6 +214,7 @@ function createStructure(){
 	infoJogo.appendChild(pHora);
 	infoJogo.appendChild(localJogo);
 	infoJogo.appendChild(rodadaJogo);
+	infoJogo.appendChild(tempoProJogoComecar);
 
 	body.appendChild(aside);
 }
