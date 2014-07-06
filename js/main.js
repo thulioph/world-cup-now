@@ -102,6 +102,7 @@ function startAjax() {
 				// verificando partidas encerradas
 					if (status == 'Encerrada') {
 						pStatus.classList.add('finalizada');
+						tempoProJogoComecar.style.display = 'none';
 					} else if (status == 'Criada') {
 						pStatus.classList.add('aguardando');
 						pStatus.textContent = 'Aguardando o começo';
